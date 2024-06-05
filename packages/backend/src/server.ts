@@ -14,7 +14,6 @@ const router = new AppRouter(app);
 connectDB();
 
 // Express configuration
-app.set('port', process.env.PORT || 4200);
 app.use(cors({ origin: '*' }));
 app.use(passport.initialize());
 app.use(bodyParser.json());
@@ -22,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 router.init();
 
-const port = app.get('port');
+const port = process.env.PORT || 4200;
 // eslint-disable-next-line no-console
 const server = app.listen(port, () => console.log(`Server started on port ${port}`));
 
