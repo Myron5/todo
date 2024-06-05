@@ -26,13 +26,10 @@ jobs:
       - name: Build
         working-directory: ./packages/frontend
         run: yarn run build
-  
-      - name: Start
-        working-directory: ./packages/frontend
-        run: yarn run start
 
       - name: Deploy with gh-pages
-        run: |
+        working-directory: ./packages/frontend
+        run:
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
         env:
