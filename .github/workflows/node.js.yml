@@ -7,28 +7,26 @@ on:
     branches: [ "main" ]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Use Node.js 19.7.0
-      uses: actions/setup-node@v3
-      with:
-        node-version: 19.7.0
-    
-    - name: Checkout repository
-      uses: actions/checkout@v4
-        
-    - name: Install dependencies
-      working-directory: ./packages/frontend
-      run: yarn install
-
-    - name: Build
-      working-directory: ./packages/frontend
-      run: yarn run build
-
-    - name: Start
-      working-directory: ./packages/frontend
-      run: yarn run start
+      - name: Use Node.js 19.7.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19.7.0
+      
+      - name: Checkout repository
+        uses: actions/checkout@v4
+          
+      - name: Install dependencies
+        working-directory: ./packages/frontend
+        run: yarn install
+  
+      - name: Build
+        working-directory: ./packages/frontend
+        run: yarn run build
+  
+      - name: Start
+        working-directory: ./packages/frontend
+        run: yarn run start
