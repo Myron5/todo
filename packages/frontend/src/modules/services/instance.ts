@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 export const instance = axios.create({
-  // baseURL: 'http://localhost:4200',
-  baseURL: 'https://todo-j75o.onrender.com'
+  baseURL: process.env.REACT_APP_BASE_URL_BACKEND
 });
 
 export const setToken = (token: string) => {
