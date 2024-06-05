@@ -14,6 +14,7 @@
     "@types/node": "^16.11.14",
     "axios": "^1.5.1",
     "formik": "^2.4.5",
+    "gh-pages": "^6.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-infinite-scroller": "^1.2.6",
@@ -47,7 +48,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
